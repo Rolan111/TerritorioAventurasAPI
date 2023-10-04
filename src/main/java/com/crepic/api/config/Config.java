@@ -7,19 +7,13 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 import javax.sql.DataSource;
 import java.util.List;
 
 @Configuration
-@EnableWebMvc
 public class Config {
 
 	@Bean
@@ -70,16 +64,6 @@ public class Config {
 				.license(mitLicense);
 
 		return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
-	}
-
-	@Bean
-	public RestTemplate rest() {
-		return new RestTemplate();
-	}
-
-	@Bean
-	public ObjectMapper objectMapper() {
-		return new ObjectMapper();
 	}
 
 }

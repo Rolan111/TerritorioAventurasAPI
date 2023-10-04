@@ -4,7 +4,6 @@ import com.crepic.api.model.User;
 import com.crepic.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class UserService {
@@ -16,7 +15,7 @@ public class UserService {
         return userRepository.findByNameUserAndPassword(nameUser, password);
     }
 
-    public User save(@RequestBody User user) {
+    public User save(User user) {
         return userRepository.save(user);
     }
 }
