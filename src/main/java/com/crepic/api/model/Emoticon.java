@@ -1,5 +1,6 @@
 package com.crepic.api.model;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 
 @Entity
@@ -7,6 +8,7 @@ import jakarta.persistence.*;
 public class Emoticon {
 
     @Id
+    @Hidden
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_emoticon")
     public int idEmoticon;

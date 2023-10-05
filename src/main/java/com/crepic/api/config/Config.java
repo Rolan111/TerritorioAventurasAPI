@@ -42,12 +42,8 @@ public class Config {
 	@Bean
 	public OpenAPI myOpenAPI() {
 		Server devServer = new Server();
-		devServer.setUrl("DEV");
-		devServer.setDescription("Server URL in Development environment");
-
-		Server prodServer = new Server();
-		prodServer.setUrl("PROD");
-		prodServer.setDescription("Server URL in Production environment");
+		devServer.setUrl("");
+		devServer.setDescription("Servidor Localhost DEV");
 
 		Contact contact = new Contact();
 		contact.setEmail("API");
@@ -57,13 +53,13 @@ public class Config {
 		License mitLicense = new License().name("MIT License").url("API");
 
 		Info info = new Info()
-				.title("API")
+				.title("Territorio de Aventuras API")
 				.version("1.0")
 				.contact(contact)
-				.description("This API.").termsOfService("")
+				.description("API SpringBoot Java para servicios del video juego Territorio de Aventuras").termsOfService("")
 				.license(mitLicense);
 
-		return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+		return new OpenAPI().info(info).servers(List.of(devServer));
 	}
 
 }
