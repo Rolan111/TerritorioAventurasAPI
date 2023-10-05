@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    User findByNameUserAndPassword(String nameUser, String password);
+    User findByUserAndPassword(String user, String password);
 
     @Query(value = "SELECT * FROM data", nativeQuery = true)
     List<User> query();

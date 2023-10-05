@@ -1,5 +1,6 @@
 package com.crepic.api.controller;
 
+import com.crepic.api.dto.BaseEntity;
 import com.crepic.api.model.LevelChallengeDescription;
 import com.crepic.api.service.LevelChallengeDescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class LevelChallengeDescriptionController {
     private LevelChallengeDescriptionService levelChallengeDescriptionService;
 
     @PostMapping("save")
-    public ResponseEntity<LevelChallengeDescription> save(@RequestBody LevelChallengeDescription levelChallengeDescription) {
+    public ResponseEntity<BaseEntity> save(@RequestBody LevelChallengeDescription levelChallengeDescription) {
         try {
             return ResponseEntity.ok(levelChallengeDescriptionService.save(levelChallengeDescription));
         } catch (Exception e) {

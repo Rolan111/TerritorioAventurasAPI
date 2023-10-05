@@ -1,25 +1,34 @@
 package com.crepic.api.model;
 
-import io.swagger.v3.oas.annotations.Hidden;
+import com.crepic.api.dto.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends BaseEntity {
 
-    @Id
-    @Hidden
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
-    public int idUser;
+    @Column(name = "name")
+    public String name;
 
-    @Column(name = "id_rol")
-    public int idRol;
+    @Column(name = "age")
+    public String age;
 
-    @Column(name = "name_user")
-    public String nameUser;
+    @Column(name = "email")
+    public String email;
+
+    @Column(name = "school")
+    public String school;
+
+    @Column(name = "user")
+    public String user;
 
     @Column(name = "password")
     public String password;
+
+    @Column(name = "id_gender")
+    public int idGender;
+
+    @Column(name = "id_rol")
+    public int idRol;
 
 }

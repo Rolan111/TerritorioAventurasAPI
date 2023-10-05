@@ -18,11 +18,23 @@ public class Config {
 
 	@Bean
 	public DataSource dataSource() {
+		String url = "", user = "", password = "";
+
+		if(false){
+			url = "jdbc:mysql://" + "localhost:3306/" + "territorioaventurasdb";
+			user = "root";
+			password = "";
+		}else{
+			url = "jdbc:mysql://" + "territorio-aventuras-db.cockz87dqo2x.us-east-1.rds.amazonaws.com/" + "territorioaventurasdb";
+			user = "root";
+			password = "root1234";
+		}
+
 		return DataSourceBuilder.create()
 				.driverClassName("com.mysql.cj.jdbc.Driver")
-				.url("jdbc:mysql://localhost:3306/territorioaventurasdb")
-				.username("root")
-				.password("")
+				.url(url)
+				.username(user)
+				.password(password)
 				.build();
 	}
 

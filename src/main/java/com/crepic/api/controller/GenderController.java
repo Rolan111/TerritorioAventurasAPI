@@ -1,8 +1,8 @@
 package com.crepic.api.controller;
 
 import com.crepic.api.dto.BaseEntity;
-import com.crepic.api.model.LevelChallengeAttempts;
-import com.crepic.api.service.LevelChallengeAttemptsService;
+import com.crepic.api.model.Gender;
+import com.crepic.api.service.GenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("levelChallengeAttempts")
-public class LevelChallengeAttemptsController {
+@RequestMapping("gender")
+public class GenderController {
 
     @Autowired
-    private LevelChallengeAttemptsService levelChallengeAttemptsService;
+    private GenderService genderService;
 
     @PostMapping("save")
-    public ResponseEntity<BaseEntity> save(@RequestBody LevelChallengeAttempts levelChallengeAttempts) {
+    public ResponseEntity<BaseEntity> save(@RequestBody Gender gender) {
         try {
-            return ResponseEntity.ok(levelChallengeAttemptsService.save(levelChallengeAttempts));
+            return ResponseEntity.ok(genderService.save(gender));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

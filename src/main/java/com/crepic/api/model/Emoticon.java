@@ -1,19 +1,13 @@
 package com.crepic.api.model;
 
-import io.swagger.v3.oas.annotations.Hidden;
+import com.crepic.api.dto.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "emoticon")
-public class Emoticon {
+public class Emoticon extends BaseEntity {
 
-    @Id
-    @Hidden
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_emoticon")
-    public int idEmoticon;
-
-    @Column(name = "name")
-    public String name;
+    @Column(name = "emoticon")
+    public String emoticon;
 
 }

@@ -1,5 +1,6 @@
 package com.crepic.api.controller;
 
+import com.crepic.api.dto.BaseEntity;
 import com.crepic.api.model.GameState;
 import com.crepic.api.service.GameStateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class GameStateController {
     private GameStateService gameStateService;
 
     @PostMapping("save")
-    public ResponseEntity<GameState> save(@RequestBody GameState gameState) {
+    public ResponseEntity<BaseEntity> save(@RequestBody GameState gameState) {
         try {
             return ResponseEntity.ok(gameStateService.save(gameState));
         } catch (Exception e) {

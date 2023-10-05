@@ -1,22 +1,16 @@
 package com.crepic.api.model;
 
-import io.swagger.v3.oas.annotations.Hidden;
+import com.crepic.api.dto.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "avatar")
-public class Avatar {
+public class Avatar extends BaseEntity {
 
-    @Id
-    @Hidden
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_avatar")
-    public int idAvatar;
+    @Column(name = "avatar")
+    public String avatar;
 
-    @Column(name = "type")
-    public String type;
-
-    @Column(name = "gender")
-    public String gender;
+    @Column(name = "id_gender")
+    public int idGender;
 
 }
