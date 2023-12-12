@@ -18,7 +18,7 @@ public class EmoticonController {
     @Autowired
     private EmoticonService emoticonService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody Emoticon emoticon) {
         try {
             return ResponseEntity.ok(emoticonService.save(emoticon));
@@ -27,7 +27,7 @@ public class EmoticonController {
         }
     }
 
-    @GetMapping("findAll")
+    @GetMapping()
     public ResponseEntity<List<Emoticon>> findAll() {
         try {
             return ResponseEntity.ok(emoticonService.findAll());

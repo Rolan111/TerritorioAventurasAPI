@@ -15,7 +15,7 @@ public class RolController {
     @Autowired
     private RolService rolService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody Rol rol) {
         try {
             return ResponseEntity.ok(rolService.save(rol));

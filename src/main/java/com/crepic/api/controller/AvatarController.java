@@ -17,7 +17,7 @@ public class AvatarController {
     @Autowired
     private AvatarService avatarService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody Avatar avatar) {
         try {
             return ResponseEntity.ok(avatarService.save(avatar));
@@ -26,7 +26,7 @@ public class AvatarController {
         }
     }
 
-    @GetMapping("findAll")
+    @GetMapping()
     public ResponseEntity<List<Avatar>> findAll() {
         try {
             return ResponseEntity.ok(avatarService.findAll());

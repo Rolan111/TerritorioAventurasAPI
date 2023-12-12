@@ -15,12 +15,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("findByUserAndPassword")
-    public ResponseEntity<BaseEntity> findByUserAndPassword(@RequestParam String user, String password) {
-        return ResponseEntity.ok(userService.findByUserAndPassword(user, password));
+    @GetMapping("login")
+    public ResponseEntity<BaseEntity> login(@RequestParam String user, String password) {
+        try {
+            return ResponseEntity.ok(userService.findByUserAndPassword(user, password));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody User user) {
         try {
             return ResponseEntity.ok(userService.save(user));

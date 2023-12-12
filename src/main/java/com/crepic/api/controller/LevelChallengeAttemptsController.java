@@ -18,7 +18,7 @@ public class LevelChallengeAttemptsController {
     @Autowired
     private LevelChallengeAttemptsService levelChallengeAttemptsService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody LevelChallengeAttempts levelChallengeAttempts) {
         try {
             return ResponseEntity.ok(levelChallengeAttemptsService.save(levelChallengeAttempts));

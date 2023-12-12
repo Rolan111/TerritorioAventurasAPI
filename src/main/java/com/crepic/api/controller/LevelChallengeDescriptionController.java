@@ -18,7 +18,7 @@ public class LevelChallengeDescriptionController {
     @Autowired
     private LevelChallengeDescriptionService levelChallengeDescriptionService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody LevelChallengeDescription levelChallengeDescription) {
         try {
             return ResponseEntity.ok(levelChallengeDescriptionService.save(levelChallengeDescription));

@@ -18,7 +18,7 @@ public class GameStateController {
     @Autowired
     private GameStateService gameStateService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody GameState gameState) {
         try {
             return ResponseEntity.ok(gameStateService.save(gameState));

@@ -18,7 +18,7 @@ public class GenderController {
     @Autowired
     private GenderService genderService;
 
-    @PostMapping("save")
+    @PostMapping()
     public ResponseEntity<BaseEntity> save(@RequestBody Gender gender) {
         try {
             return ResponseEntity.ok(genderService.save(gender));
