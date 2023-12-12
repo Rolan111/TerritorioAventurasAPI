@@ -20,7 +20,7 @@ public class Config {
 	public DataSource dataSource() {
 		String url = "", user = "", password = "";
 
-		if(false){
+		if(true){
 			url = "jdbc:mysql://" + "localhost:3306/" + "territorioaventurasdb";
 			user = "root";
 			password = "";
