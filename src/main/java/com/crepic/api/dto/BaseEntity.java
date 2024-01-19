@@ -2,8 +2,7 @@ package com.crepic.api.dto;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 
 @MappedSuperclass
@@ -16,6 +15,7 @@ public class BaseEntity {
     public int id;
 
     @Hidden
+    @CreationTimestamp
     @Column(name = "register_date")
     public Timestamp registerDate;
 
